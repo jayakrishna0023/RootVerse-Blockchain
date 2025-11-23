@@ -1,0 +1,49 @@
+{
+  "name": "seafood-blockchain",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Seafood Tracking Blockchain System",
+  "main": "blockchain-server.js",
+  "scripts": {
+    "start": "node blockchain-server.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "backend": "python main.py",
+    "dev:all": "concurrently \"npm run backend\" \"npm run dev\""
+  },
+  "dependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vechain/connex-driver": "^2.2.1",
+    "@vechain/connex-framework": "^2.2.1",
+    "axios": "^1.11.0",
+    "chalk": "^5.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "framer-motion": "^12.23.24",
+    "html5-qrcode": "^2.3.8",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.542.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
+    "react-leaflet": "^5.0.0",
+    "react-phone-number-input": "^3.4.13",
+    "react-router-dom": "^7.8.2",
+    "thor-devkit": "^2.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@vitejs/plugin-react": "^5.0.2",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5"
+  }
+}
