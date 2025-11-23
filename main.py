@@ -1619,15 +1619,19 @@ if __name__ == "__main__":
     print("🔗 Blockchain Storage: Real VeChain Integration")
     print("🗄️ Database: Supabase PostgreSQL")
     print("📦 Storage: Supabase Storage")
-    print("🌐 Server: http://localhost:8005")
-    print("📚 Docs: http://localhost:8005/docs")
+    # Support for cloud deployment (Render, Railway, etc.)
+    port = int(os.getenv("PORT", 8005))
+    host = "0.0.0.0" if os.getenv("PORT") else "127.0.0.1"
+    
+    print(f"🌐 Server: http://{host}:{port}")
+    print(f"📚 Docs: http://{host}:{port}/docs")
     print("🔍 Explorer: https://explore-testnet.vechain.org")
     
     try:
         uvicorn.run(
             app,
-            host="127.0.0.1",
-            port=8005,
+            host=host,
+            port=port,
             log_level="info"
         )
     except KeyboardInterrupt:
