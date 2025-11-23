@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:8005'
+// Use environment variable for API URL (supports local dev and production)
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8005'
+
+console.log('🔗 API Base URL:', API_BASE_URL)
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -8,7 +11,7 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
   // Keep API responsive; fail fast in offline mode
-  timeout: 7000,
+  timeout: 15000, // Increased timeout for remote servers
 })
 
 // Product Types
